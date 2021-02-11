@@ -1,0 +1,230 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>apkup</title>
+	<meta name="description" content="Documentation for apkup">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">apkup</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>apkup</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h3 align="center">Apkup</h3>
+				<div align="center">
+					<p><a href="https://www.npmjs.com/package/apkup"><img src="https://img.shields.io/npm/v/apkup.svg" alt="npm"></a>
+						<a href="https://travis-ci.com/eventOneHQ/apkup"><img src="https://travis-ci.com/eventOneHQ/apkup.svg?branch=master" alt="Build Status"></a>
+						<a href="https://github.com/eventOneHQ/apkup/issues"><img src="https://img.shields.io/github/issues/eventOneHQ/apkup.svg" alt="GitHub Issues"></a>
+						<a href="https://github.com/eventOneHQ/apkup/pulls"><img src="https://img.shields.io/github/issues-pr/eventOneHQ/apkup.svg" alt="GitHub Pull Requests"></a>
+					<a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a></p>
+				</div>
+				<hr>
+				<p align="center"> Publish APKs to Google Play directly from the terminal
+					<br>
+				</p>
+				<p>This package offers a streamlined way to publish packages in the Google Play Store.</p>
+				<p>A fork of <a href="https://github.com/jeduan/playup">playup</a>.</p>
+				<a href="#📝-table-of-contents" id="📝-table-of-contents" style="color: inherit; text-decoration: none;">
+					<h2>📝 Table of Contents</h2>
+				</a>
+				<ul>
+					<li><a href="#getting_started">Getting Started</a></li>
+					<li><a href="#usage">Usage</a></li>
+					<li><a href="#authentication">Authentication</a></li>
+					<li><a href="CONTRIBUTING.md">Contributing</a></li>
+					<li><a href="#authors">Authors</a></li>
+					<li><a href="#acknowledgement">Acknowledgments</a></li>
+				</ul>
+				<a href="#🏁-getting-started-" id="🏁-getting-started-" style="color: inherit; text-decoration: none;">
+					<h2>🏁 Getting Started <a name = "getting_started"></a></h2>
+				</a>
+				<p>Getting started with <code>apkup</code> is pretty easy and straight forward.</p>
+				<p>Install the <code>apkup</code> package globally or locally:</p>
+				<pre><code class="language-bash"><span style="color: #000000">npm i -g apkup</span>
+<span style="color: #000000">apkup --help</span>
+
+<span style="color: #008000"># or if you just want to use the CLI locally</span>
+<span style="color: #000000">npx apkup --help</span>
+
+<span style="color: #008000"># or install the library into your project</span>
+<span style="color: #000000">npm i -D apkup</span>
+</code></pre>
+				<a href="#cli" id="cli" style="color: inherit; text-decoration: none;">
+					<h3>CLI</h3>
+				</a>
+				<p>Then use the CLI:</p>
+				<pre><code class="language-bash"><span style="color: #000000">apkup \</span>
+<span style="color: #000000">  --key api.json \</span>
+<span style="color: #000000">  --apk /path/to/Package.apk \</span>
+<span style="color: #000000">  --deobfuscation /path/to/mapping.txt </span><span style="color: #EE0000">\ </span><span style="color: #008000"># optional</span>
+<span style="color: #000000">  --release-notes </span><span style="color: #A31515">&quot;en-US=lorem ipsum dolor&quot;</span><span style="color: #000000"> \</span>
+<span style="color: #000000">  --obbs /path/to/Expansion.obb </span><span style="color: #EE0000">\ </span><span style="color: #000000"> </span><span style="color: #008000"># optional</span>
+<span style="color: #000000">  --obbs /path/to/Expansion2.obb   </span><span style="color: #008000"># optional</span>
+</code></pre>
+				<p>You can also specify each parameter via environment variables prefixed with <code>APKUP_</code> (e.g. <code>APKUP_KEY</code> or <code>APKUP_APK</code>).</p>
+				<a href="#library" id="library" style="color: inherit; text-decoration: none;">
+					<h3>Library</h3>
+				</a>
+				<p>Or use the JavaScript library!</p>
+				<pre><code class="language-javascript"><span style="color: #008000">// typescript / modulejs</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Apkup</span><span style="color: #000000"> } = </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;apkup&#039;</span><span style="color: #000000">;</span>
+<span style="color: #008000">// or commonjs</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Apkup</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;apkup&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">apkup</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Apkup</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">client_email:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">private_key:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">apkup</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">upload</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;/path/to/apk&#039;</span><span style="color: #000000">, {</span>
+<span style="color: #000000">    </span><span style="color: #001080">obbs:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      </span><span style="color: #008000">// optional expansion files (max 2)</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&#039;/path/to/somefile.obb&#039;</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">releaseNotes:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">language:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;en-US&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">text:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Minor bug fixes...&#039;</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    ]</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">` &gt; </span><span style="color: #0000FF">${</span><span style="color: #001080">data</span><span style="color: #000000FF">.</span><span style="color: #001080">packageName</span><span style="color: #0000FF">}</span><span style="color: #A31515"> version </span><span style="color: #0000FF">${</span><span style="color: #001080">data</span><span style="color: #000000FF">.</span><span style="color: #001080">versionCode</span><span style="color: #0000FF">}</span><span style="color: #A31515"> is up!`</span><span style="color: #000000">);</span>
+<span style="color: #000000">  });</span>
+
+</code></pre>
+				<a href="#🔒-authentication-" id="🔒-authentication-" style="color: inherit; text-decoration: none;">
+					<h2>🔒 Authentication <a name = "authentication"></a></h2>
+				</a>
+				<p>First you have to create a Google Play API Access. To do that go to the
+					<a href="https://play.google.com/apps/publish">Google Play Developer Console</a> and then
+					with the account owner go to Settings -&gt; API access and create a Google Play
+				Android Developer project.</p>
+				<p>After that follow the instructions to create a Service Account.
+					When you click Create Client ID, choose Service Account. You will get a JSON file
+				with a public key and the service email.</p>
+				<p>The created Service Account needs the following role:</p>
+				<ul>
+					<li>Release manager</li>
+				</ul>
+				<a href="#🎈-usage-" id="🎈-usage-" style="color: inherit; text-decoration: none;">
+					<h2>🎈 Usage <a name="usage"></a></h2>
+				</a>
+				<p>See the full docs <a href="https://oss.eventone.page/apkup/classes/index.apkup">here</a>.</p>
+				<a href="#✍️-authors-" id="✍️-authors-" style="color: inherit; text-decoration: none;">
+					<h2>✍️ Authors <a name = "authors"></a></h2>
+				</a>
+				<ul>
+					<li><a href="https://github.com/nprail">@nprail</a> - Maintainer</li>
+				</ul>
+				<p>See also the list of <a href="https://github.com/eventOneHQ/apkup/contributors">contributors</a> who participated in this project.</p>
+				<a href="#🎉-acknowledgements-" id="🎉-acknowledgements-" style="color: inherit; text-decoration: none;">
+					<h2>🎉 Acknowledgements <a name = "acknowledgement"></a></h2>
+				</a>
+				<ul>
+					<li>The original project, <a href="https://github.com/jeduan/playup">playup</a>!</li>
+					<li>Hat tip to anyone whose code was used</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/edit.html">Edit</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actions_promote.html">actions/<wbr>Promote</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/actions_upload.html">actions/<wbr>Upload</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/helpers.html">helpers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
