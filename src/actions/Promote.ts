@@ -51,8 +51,7 @@ export class Promote extends Edit {
       return (
         r.versionCodes &&
         r.versionCodes.includes(this.editParams.versionCode.toString()) &&
-        r.status &&
-        r.status === 'completed'
+        r.status
       )
     })
   }
