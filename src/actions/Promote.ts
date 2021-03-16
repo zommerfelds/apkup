@@ -81,14 +81,6 @@ export class Promote extends Edit {
       throw new Error(
         'Previous track not found! Has this version been uploaded? '
       )
-    } else if (this.previousTrack.track === this.promoteParams.track) {
-      throw new Error(
-        `The previous track (${
-          this.previousTrack.track
-        }) is the same as the one that you are trying to promote to (${
-          this.promoteParams.track
-        }).`
-      )
     }
     this.previousRelease = this.findRelease(this.previousTrack)
   }
