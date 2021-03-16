@@ -173,7 +173,7 @@ export class Upload extends Edit {
           releases: [
             {
               releaseNotes: this.uploadParams.releaseNotes,
-              status: 'completed',
+              status: 'draft',
               versionCodes: this.versionCodes
             }
           ],
