@@ -39,7 +39,7 @@ export class Promote extends Edit {
     await this.findPreviousTrack()
     await this.findPreviousRelease()
     await this.assignTrack()
-    await this.removePreviousTrack()
+    // await this.removePreviousTrack()
   }
 
   private findRelease (track: any) {
