@@ -98,7 +98,7 @@ export class Promote extends Edit {
             {
               releaseNotes:
                 this.previousRelease && this.previousRelease.releaseNotes,
-              status: 'draft', // 'completed',
+              status: 'completed',
               versionCodes: [this.editParams.versionCode.toString()]
             }
           ],
